@@ -5,7 +5,7 @@ const expressHbs = require('express-handlebars');
 
 const app = express();
 
-app.engine('hbs', expressHbs.engine());
+app.engine('hbs', expressHbs.engine({layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs'}));
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 
@@ -14,7 +14,6 @@ const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({extended: false})); 
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use('/admin', adminData.routes);
 app.use(shopRoutes);
