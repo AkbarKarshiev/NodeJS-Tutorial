@@ -1,0 +1,39 @@
+<%- include('./includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('./includes/navigation.ejs') %>
+    <main>
+      <% if (users.length > 0) {%>
+        <div class="grid">
+          <% for (let user of users) { %>
+            <article class="card product-item">
+                <header class="card__header">
+                  <h1 class="product__title">
+                    <%= user.name %>
+                  </h1>
+                </header>
+                <div class="card__image">
+                  <img src="https://i.imgur.com/VDRXqTn.jpeg" alt="A Book">
+                </div>
+                <div class="card__content">
+                  <h2 class="product__price">
+                    Bio
+                  </h2>
+                  <p class="product__description">
+                    Hello there Obi Wan Kenobi
+                  </p>
+                </div>
+                <div class="card__actions">
+                  <button class="btn">
+                    Send friend request
+                  </button>
+                </div>
+            </article>
+          <% } %>
+        </div>
+      <% } else { %>
+        <h1>No Users!</h1>
+      <% } %>
+    </main>
+  </body>
+<%- include('./includes/end.ejs') %>
