@@ -24,7 +24,6 @@ app.use(errorController.get404);
 sequelize
   .sync()
   .then(result => {
-    console.log(result);
     app.listen(5000);
   })
   .catch(err => {
