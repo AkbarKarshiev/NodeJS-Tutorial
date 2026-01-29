@@ -1,4 +1,7 @@
 const express = require('express')
+const batman = require('./batman')
+const superman = require('./superman')
+console.log(superHero);
 
 const app = express()
 
